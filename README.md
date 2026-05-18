@@ -5,7 +5,7 @@
 **Curso:** Análise e Desenvolvimento de Sistemas  
 **Instituição:** Faculdade Anhanguera de Osasco  
 **Início:** 2025.1
-**Início:** 2025.1
+**Término:** 2027.1
 
 ---
 

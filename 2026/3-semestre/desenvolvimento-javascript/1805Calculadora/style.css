@@ -1,0 +1,94 @@
+.historico{
+    margin-left: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    height: 350px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.historico ul{
+    list-style: none;
+    padding: 0;
+}
+
+.historico li{
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+}
+.topoHistorico{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btnLimparHistorico{
+    background: crimson;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.itemHistorico{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.btnApagar{
+    background: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+.calculadora {
+  background: #222;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.993);
+}
+
+.display {
+  width: 97%;
+  height: 50px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-align: right;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 77px);
+  gap: 10px;
+}
+
+button {
+  height: 60px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.operador { background: orange; }
+.igual { background: green; color: white; }
+.limpar { background: red; color: white; }
