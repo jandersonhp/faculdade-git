@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ADS | Janderson Duarte Abreu | Faculdade Anhanguera</title>
+    <!-- Google Fonts & simple reset -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 56px 0 64px 0;
+            border-bottom: 4px solid #3b82f6;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .hero-text .badge {
+            background: rgba(59,130,246,0.2);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59,130,246,0.5);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 550px;
+            margin: 16px 0 24px 0;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .info-card i {
+            font-size: 1.5rem;
+            color: #60a5fa;
+        }
+
+        .info-card span {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .hero-stats {
+            background: rgba(255,255,255,0.05);
+            border-radius: 32px;
+            padding: 24px 32px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-stats .period {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #facc15;
+        }
+
+        /* Seção objetivo / sobre */
+        .section {
+            padding: 64px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: #3b82f6;
+            font-size: 1.8rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .objective-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #eef2ff;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+        }
+
+        .objective-card i {
+            font-size: 2.2rem;
+            color: #3b82f6;
+            margin-bottom: 16px;
+        }
+
+        .objective-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        /* disciplinas */
+        .semester {
+            margin-bottom: 56px;
+        }
+
+        .semester-header {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+            border-left: 5px solid #3b82f6;
+            padding-left: 20px;
+        }
+
+        .semester-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+
+        .semester-badge {
+            background: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+
+        .disciplines-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .discipline-card {
+            background: white;
+            border-radius: 24px;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .discipline-card:hover {
+            border-color: #b9d0f0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .discipline-main {
+            padding: 20px 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .discipline-info h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .professor {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .professor i {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .discipline-link {
+            background: #f1f5f9;
+            padding: 8px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #1e40af;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .discipline-link i {
+            font-size: 0.8rem;
+        }
+
+        .discipline-link:hover {
+            background: #e0e7ff;
+            color: #1e3a8a;
+        }
+
+        .extra-link {
+            background: #fef9e3;
+            margin: 0 20px 20px 20px;
+            padding: 12px 20px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px dashed #fde68a;
+        }
+
+        .extra-link a {
+            font-weight: 600;
+            text-decoration: none;
+            background: white;
+            padding: 6px 16px;
+            border-radius: 32px;
+            color: #b45309;
+            border: 1px solid #fed7aa;
+            transition: 0.2s;
+        }
+
+        .extra-link a i {
+            margin-right: 8px;
+        }
+
+        .extra-link a:hover {
+            background: #fffbeb;
+            border-color: #fdba74;
+        }
+
+        .in-progress {
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 40px 28px;
+            text-align: center;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .in-progress i {
+            font-size: 3rem;
+            color: #94a3b8;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .github-corner {
+            font-size: 1rem;
+            display: inline-flex;
+            gap: 12px;
+            align-items: center;
+            background: #1e293b;
+            padding: 10px 20px;
+            border-radius: 60px;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+        }
+
+        .github-corner:hover {
+            background: #2d3a4e;
+        }
+
+        @media (max-width: 780px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .info-cards {
+                justify-content: center;
+            }
+            .semester-header {
+                flex-direction: column;
+                border-left: none;
+                padding-left: 0;
+                border-top: 3px solid #3b82f6;
+                padding-top: 16px;
+            }
+            .discipline-main {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <div class="badge">
+                <i class="fas fa-graduation-cap"></i> Portfólio Acadêmico
+            </div>
+            <h1>🎓 Análise e Desenvolvimento de Sistemas</h1>
+            <p>Central de anotações, exercícios, projetos e materiais de estudo — jornada completa até 2027.1.</p>
+            <div class="info-cards">
+                <div class="info-card"><i class="fas fa-user"></i><span>Janderson Duarte Abreu</span></div>
+                <div class="info-card"><i class="fas fa-university"></i><span>Faculdade Anhanguera de Osasco</span></div>
+                <div class="info-card"><i class="fas fa-calendar-alt"></i><span>2025.1 → 2027.1</span></div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="period">3º Semestre • 2026</div>
+            <div style="margin-top: 8px;"><i class="fas fa-chart-line"></i> Em evolução constante</div>
+            <div style="font-size: 0.8rem; opacity: 0.8;">JavaScript · Modelagem · Análise</div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Objetivo Section -->
+    <div class="container section">
+        <div class="section-title">
+            <i class="fas fa-bullseye"></i>
+            <h2>🧠 Objetivo & Centralização</h2>
+        </div>
+        <div class="grid-cards">
+            <div class="objective-card"><i class="fas fa-pen-alt"></i><h3>Anotações de aula</h3><p>Registros organizados por disciplina e data, facilitando revisões eficientes.</p></div>
+            <div class="objective-card"><i class="fas fa-code-branch"></i><h3>Exercícios práticos</h3><p>Códigos, desafios e soluções implementadas em JavaScript, modelagem e bancos de dados.</p></div>
+            <div class="objective-card"><i class="fas fa-folder-open"></i><h3>Projetos integradores</h3><p>Aplicações reais desenvolvidas ao longo do curso, com foco em soluções web e dados.</p></div>
+            <div class="objective-card"><i class="fas fa-database"></i><h3>Materiais de estudo</h3><p>Slides, resumos e links importantes, sempre acessíveis e versionados no GitHub.</p></div>
+        </div>
+    </div>
+
+    <!-- Estrutura por Semestre -->
+    <div class="container section">
+        <div class="section-title">
+            <i class="fas fa-layer-group"></i>
+            <h2>📚 Estrutura por Semestre</h2>
+        </div>
+
+        <!-- 3º Semestre (2026) detalhado -->
+        <div class="semester">
+            <div class="semester-header">
+                <div class="semester-title">📌 3º Semestre · 2026</div>
+                <div class="semester-badge"><i class="fas fa-chalkboard-user"></i> Em andamento com projetos</div>
+            </div>
+            <div class="disciplines-list">
+                <!-- Modelagem de Dados -->
+                <div class="discipline-card">
+                    <div class="discipline-main">
+                        <div class="discipline-info">
+                            <h3><i class="fas fa-diagram-project"></i> Modelagem de Dados</h3>
+                            <div class="professor"><i class="fas fa-chalkboard"></i> Professor: Eduardo</div>
+                        </div>
+                        <a href="https://jandersonhp.github.io/faculdade-git/2026/3-semestre/modelagem-de-dados" class="discipline-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-folder-open"></i> Acessar disciplina →</a>
+                    </div>
+                    <div class="extra-link">
+                        <span><i class="fas fa-star-of-life"></i> Revisão e Simulado B2</span>
+                        <a href="https://jandersonhp.github.io/faculdade-git/2026/3-semestre/modelagem-de-dados/ResumoB2/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Revisão & Simulado</a>
+                    </div>
+                </div>
+
+                <!-- Análise e Modelagem de Dados -->
+                <div class="discipline-card">
+                    <div class="discipline-main">
+                        <div class="discipline-info">
+                            <h3><i class="fas fa-chart-simple"></i> Análise e Modelagem de Dados</h3>
+                            <div class="professor"><i class="fas fa-chalkboard"></i> Professor: Alessio</div>
+                        </div>
+                        <a href="https://jandersonhp.github.io/faculdade-git/2026/3-semestre/analise-e-modelagem-de-dados" class="discipline-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-folder-open"></i> Materiais e projetos</a>
+                    </div>
+                </div>
+
+                <!-- Desenvolvimento em JavaScript -->
+                <div class="discipline-card">
+                    <div class="discipline-main">
+                        <div class="discipline-info">
+                            <h3><i class="fab fa-js"></i> Desenvolvimento em JavaScript</h3>
+                            <div class="professor"><i class="fas fa-chalkboard"></i> Professor: Argentino</div>
+                        </div>
+                        <a href="https://jandersonhp.github.io/faculdade-git/2026/3-semestre/desenvolvimento-javascript" class="discipline-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> Códigos + desafios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4º Semestre "Em andamento" com visual dinâmico -->
+        <div class="semester">
+            <div class="semester-header">
+                <div class="semester-title">📌 4º Semestre</div>
+                <div class="semester-badge" style="background:#fef9c3; color:#854d0e;"><i class="fas fa-spinner fa-pulse"></i> Em andamento...</div>
+            </div>
+            <div class="in-progress">
+                <i class="fas fa-brain"></i>
+                <h3 style="font-weight: 600;">Disciplinas do 4º semestre sendo preparadas</h3>
+                <p>Novos conteúdos, projetos integradores e tecnologias avançadas serão adicionados em breve.<br> Acompanhe as atualizações pelo GitHub.</p>
+                <div style="display: flex; gap: 16px; margin-top: 8px;">
+                    <i class="fas fa-cloud-arrow-up"></i> Versionamento contínuo
+                    <i class="fas fa-microchip"></i> Arquitetura & Frameworks
+                </div>
+            </div>
+        </div>
+
+        <!-- Organização extra: Data e Exercícios -->
+        <div style="margin-top: 40px; background: #eef2ff; border-radius: 28px; padding: 32px 28px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="font-size: 1.5rem; display: flex; gap: 12px;"><i class="fas fa-calendar-week"></i> Organização inteligente</h3>
+                    <p style="margin-top: 12px; max-width: 500px;">📅 Conteúdo organizado por data da aula, com exercícios práticos e projetos versionados. Tudo centralizado para otimizar seus estudos.</p>
+                    <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+                        <span><i class="fas fa-check-circle" style="color:#16a34a;"></i> Anotações por aula</span>
+                        <span><i class="fas fa-laptop-code"></i> Códigos comentados</span>
+                        <span><i class="fas fa-folder-tree"></i> Estrutura semestral</span>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 28px; padding: 16px 24px; min-width: 180px; text-align: center;">
+                    <i class="fas fa-git-alt" style="font-size: 2.2rem; color:#0f172a;"></i>
+                    <div style="font-weight: 800; margin-top: 8px;">Git + GitHub</div>
+                    <div style="font-size: 0.75rem;">Versionamento profissional</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Acesso rápido ao repositório GitHub (Landing page baseada no repo) -->
+    <div class="container" style="padding-bottom: 40px;">
+        <div style="background: linear-gradient(145deg, #1e293b, #0f172a); border-radius: 48px; padding: 32px 32px; color: white; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+            <div>
+                <h2 style="font-weight: 700; display: flex; gap: 12px;"><i class="fab fa-github"></i> Repositório oficial</h2>
+                <p style="margin-top: 12px; opacity: 0.9;">Acesse o conteúdo completo, exercícios práticos e evolução por semestre. Tudo organizado como descrito acima.</p>
+                <div style="margin-top: 20px;">
+                    <a href="https://github.com/jandersonhp/faculdade-git" target="_blank" class="github-corner" style="background: #ffffff20; backdrop-filter: blur(4px);"><i class="fab fa-github"></i> github.com/jandersonhp/faculdade-git <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div>
+                <i class="fas fa-arrow-circle-right" style="font-size: 3rem; opacity: 0.7;"></i>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+                <i class="fas fa-graduation-cap"></i> Janderson Duarte Abreu • Análise e Desenvolvimento de Sistemas
+            </div>
+            <div style="font-size: 0.85rem; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+                <span><i class="fas fa-calendar-alt"></i> Início: 2025.1 | Término: 2027.1</span>
+                <span><i class="fas fa-map-marker-alt"></i> Faculdade Anhanguera de Osasco</span>
+            </div>
+            <div style="margin-top: 12px;">
+                <a href="https://github.com/jandersonhp" target="_blank" style="color: #94a3b8; margin: 0 12px; transition: 0.2s;"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" style="color: #94a3b8; margin: 0 12px;"><i class="fas fa-folder-open"></i> Portfólio de Estudos</a>
+            </div>
+            <hr style="border-color: #1e293b; margin: 16px 0;">
+            <div style="font-size: 0.8rem;">📌 Landing page oficial do repositório acadêmico — Anotações, exercícios, projetos e materiais unificados</div>
+        </div>
+    </div>
+</footer>
+
+<!-- script suave para links externos, apenas garantia -->
+<script>
+    // pequeno efeito para garantir que links externos abram com segurança
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.setAttribute('rel', 'noopener noreferrer');
+    });
+    // animação de entrada suave (opcional)
+    window.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.objective-card, .discipline-card');
+        cards.forEach((card, idx) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(12px)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, idx * 50);
+        });
+    });
+</script>
+</body>
+</html>
