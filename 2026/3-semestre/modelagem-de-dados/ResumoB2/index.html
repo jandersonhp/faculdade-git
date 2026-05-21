@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Estudos - Modelagem de Dados</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+    <h1>📚 Guia de Estudos: Modelagem & Arquitetura</h1>
+    <p>Disciplina: Modelagem de Dados</p>
+</header>
+
+<!-- HOME -->
+ <div class="disclaimer">
+
+    <h3>⚠️ Aviso Importante</h3>
+
+    <p>
+        Todo o conteúdo deste site foi gerado e estruturado com auxílio de Inteligência Artificial.
+        Apesar da revisão e organização do material, podem existir erros conceituais,
+        simplificações ou interpretações incorretas.
+    </p>
+
+    <p>
+        Utilize também os materiais de apoio disponibilizados abaixo para complementar os estudos.
+    </p>
+
+</div>
+
+<div class="materiais-card">
+
+    <h2>📚 Materiais de Apoio</h2>
+
+<div class="materiais-grid">
+
+    <!-- PDFS -->
+
+    <a href="src/Simulado.pdf"
+       target="_blank"
+       class="material-item">
+
+        <div class="icone">📄</div>
+
+        <div>
+            <h4>Simulado Oficial</h4>
+            <span>Créditos: Julia Brasileiro</span>
+        </div>
+
+    </a>
+
+    <a href="src/Revisao_Modelagem_Dados.pdf"
+       target="_blank"
+       class="material-item">
+
+        <div class="icone">📘</div>
+
+        <div>
+            <h4>Revisão Completa</h4>
+            <span>Créditos: ~ pimento</span>
+        </div>
+
+    </a>
+
+    <!-- AULAS -->
+
+    <a href="src/AULA 7 -CICLO DE VIDA DE  UM BANCO DE DADOS.pptx"
+       target="_blank"
+       class="material-item">
+
+        <div class="icone">🖥️</div>
+
+        <div>
+            <h4>Aula 7</h4>
+            <span>Ciclo de Vida de Banco de Dados</span>
+        </div>
+
+    </a>
+
+    <a href="src/AULA 8  - UML.pptx"
+       target="_blank"
+       class="material-item">
+
+        <div class="icone">📐</div>
+
+        <div>
+            <h4>Aula 8</h4>
+            <span>UML</span>
+        </div>
+
+    </a>
+
+    <a href="src/AULA 9  - NORMALIZAÇÃO.pptx"
+       target="_blank"
+       class="material-item">
+
+        <div class="icone">🧩</div>
+
+        <div>
+            <h4>Aula 9</h4>
+            <span>Normalização</span>
+        </div>
+
+    </a>
+
+    <a href="src/AULA 10  - TRANSFORMAÇÃO 1FN E 2FN.pptx"
+       target="_blank"
+       class="material-item">
+
+        <div class="icone">🗂️</div>
+
+        <div>
+            <h4>Aula 10</h4>
+            <span>Transformação 1FN e 2FN</span>
+        </div>
+
+    </a>
+
+    <a href="src/AULA 11  - TRANSFORMAÇÃO 3FN E 4FN.pptx"
+       target="_blank"
+       class="material-item">
+
+        <div class="icone">⚙️</div>
+
+        <div>
+            <h4>Aula 11</h4>
+            <span>Transformação 3FN e 4FN</span>
+        </div>
+
+    </a>
+
+</div>
+</div>
+<section id="home" class="pagina ativa">
+
+    <div class="hero">
+
+        <div class="hero-card">
+            <h2>📘 Revisão Completa</h2>
+            <p>Resumo detalhado das aulas 7 até 11.</p>
+
+            <button onclick="abrirPagina('revisao')">
+                Estudar Agora
+            </button>
+        </div>
+
+        <div class="hero-card">
+            <h2>📝 Simulado 1</h2>
+            <p>16 questões no estilo da prova.</p>
+
+            <button onclick="abrirPagina('simulado1')">
+                Fazer Simulado
+            </button>
+        </div>
+
+        <div class="hero-card">
+            <h2>🧠 Simulado 2</h2>
+            <p>Questões sobre UML e Ciclo de Vida.</p>
+
+            <button onclick="abrirPagina('simulado2')">
+                Fazer Simulado
+            </button>
+        </div>
+
+        <div class="hero-card">
+            <h2>🎯 Simulado 3</h2>
+            <p>Questões focadas em Normalização.</p>
+
+            <button onclick="abrirPagina('simulado3')">
+                Fazer Simulado
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- REVISÃO -->
+<section id="revisao" class="pagina">
+
+    <button class="voltar" onclick="abrirPagina('home')">
+        ⬅ Voltar ao Início
+    </button>
+
+    <div class="titulo-revisao">
+        <h2>📘 Revisão Completa</h2>
+        <p>
+            Guia definitivo de preparação para a avaliação oficial.
+        </p>
+    </div>
+
+    <!-- AULA 7 -->
+    <div class="bloco">
+
+        <div class="tag-aula">
+            AULA 7
+        </div>
+
+        <h3>🗄️ Ciclo de Vida de um Banco de Dados</h3>
+
+        <p class="texto">
+            O desenvolvimento de um banco de dados acompanha o ciclo
+            completo da engenharia de software, desde o levantamento
+            de requisitos até sua evolução em produção.
+        </p>
+
+        <div class="topico-importante">
+            ⚠️ CAI MUITO NA PROVA:
+            Estudo Inicial → Projeto → Implementação →
+            Testes → Operação/Manutenção
+        </div>
+
+        <div class="topico">
+
+            <h4>1. Estudo Inicial</h4>
+
+            <ul>
+                <li>Levantamento de requisitos</li>
+                <li>Definição do escopo</li>
+                <li>Identificação de riscos</li>
+                <li>Regras de negócio</li>
+                <li>Fronteiras do sistema</li>
+            </ul>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>2. Projeto do Banco de Dados</h4>
+
+            <div class="tabela-estudo">
+
+                <div class="linha">
+                    <div class="coluna titulo">
+                        Projeto Conceitual
+                    </div>
+
+                    <div class="coluna">
+                        Modelo abstrato independente do SGBD.
+                    </div>
+                </div>
+
+                <div class="linha">
+                    <div class="coluna titulo">
+                        Escolha do SGBD
+                    </div>
+
+                    <div class="coluna">
+                        Seleção da tecnologia ideal.
+                    </div>
+                </div>
+
+                <div class="linha">
+                    <div class="coluna titulo">
+                        Projeto Lógico
+                    </div>
+
+                    <div class="coluna">
+                        Conversão do DER em tabelas.
+                    </div>
+                </div>
+
+                <div class="linha">
+                    <div class="coluna titulo">
+                        Projeto Físico
+                    </div>
+
+                    <div class="coluna">
+                        Scripts SQL, índices e restrições.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>3. Implementação e Carga</h4>
+
+            <ul>
+                <li>Instalação do SGBD</li>
+                <li>Execução de scripts</li>
+                <li>Conversão histórica de dados</li>
+                <li>Migração de dados antigos</li>
+            </ul>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>4. Teste e Avaliação</h4>
+
+            <ul>
+                <li>Testes de integridade</li>
+                <li>Testes de segurança</li>
+                <li>Testes de desempenho</li>
+                <li>Consultas pesadas</li>
+            </ul>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>5. Operação e Manutenção</h4>
+
+            <ul>
+                <li>Banco entra em produção</li>
+                <li>Backups</li>
+                <li>Monitoramento</li>
+                <li>Otimização de índices</li>
+                <li>Evolução estrutural</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- MODELAGEM -->
+    <div class="bloco">
+
+        <h3>🧠 Estratégias de Modelagem</h3>
+
+        <div class="comparacao">
+
+            <div class="comparacao-card topdown">
+
+                <h4>TOP-DOWN</h4>
+
+                <p>
+                    Parte da visão geral do negócio
+                    para o detalhamento dos atributos.
+                </p>
+
+                <ul>
+                    <li>Entidades primeiro</li>
+                    <li>Atributos depois</li>
+                    <li>Ideal para sistemas complexos</li>
+                </ul>
+
+            </div>
+
+            <div class="comparacao-card bottomup">
+
+                <h4>BOTTOM-UP</h4>
+
+                <p>
+                    Parte dos atributos isolados
+                    até formar tabelas.
+                </p>
+
+                <ul>
+                    <li>Atributos primeiro</li>
+                    <li>Tabelas depois</li>
+                    <li>Ideal para sistemas pequenos</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>MIDDLE-UP-DOWN</h4>
+
+            <p class="texto">
+                Técnica híbrida onde o projetista alterna
+                entre visão macro e microatributos.
+            </p>
+
+        </div>
+
+        <div class="topico-importante">
+            ⚠️ PEGADINHA:
+            Bottom-Up começa pelos atributos.
+        </div>
+
+    </div>
+
+    <!-- DICIONÁRIO -->
+    <div class="bloco">
+
+        <h3>📚 Dicionário de Dados (Metadados)</h3>
+
+        <p class="texto">
+            Documento oficial que descreve tabelas,
+            colunas, tipos de dados, PKs, FKs,
+            limites e permissões.
+        </p>
+
+        <div class="flashcard">
+            <strong>Metadados:</strong>
+            Dados sobre os dados.
+        </div>
+
+    </div>
+
+    <!-- UML -->
+    <div class="bloco">
+
+        <div class="tag-aula">
+            AULA 8
+        </div>
+
+        <h3>📐 UML (Unified Modeling Language)</h3>
+
+        <p class="texto">
+            Linguagem gráfica internacional usada para
+            visualizar, especificar e documentar sistemas.
+        </p>
+
+        <div class="topico-importante">
+            ⚠️ UML NÃO é linguagem de programação.
+        </div>
+
+        <div class="topico">
+
+            <h4>Relacionamentos</h4>
+
+            <div class="grid-cards">
+
+                <div class="mini-card">
+                    <h5>Associação</h5>
+                    <p>Ligação estrutural simples.</p>
+                </div>
+
+                <div class="mini-card">
+                    <h5>Agregação</h5>
+                    <p>Relação todo-parte.</p>
+                </div>
+
+                <div class="mini-card">
+                    <h5>Dependência</h5>
+                    <p>Mudança afeta outro elemento.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>Diagramas UML</h4>
+
+            <div class="grid-diagramas">
+
+                <div class="diag-card">
+                    <strong>Casos de Uso</strong>
+                    <span>Interação usuário/sistema</span>
+                </div>
+
+                <div class="diag-card">
+                    <strong>Classes</strong>
+                    <span>Estrutura estática</span>
+                </div>
+
+                <div class="diag-card">
+                    <strong>Sequência</strong>
+                    <span>Ordem temporal</span>
+                </div>
+
+                <div class="diag-card">
+                    <strong>Atividades</strong>
+                    <span>Fluxo do processo</span>
+                </div>
+
+                <div class="diag-card">
+                    <strong>Estado</strong>
+                    <span>Status do objeto</span>
+                </div>
+
+                <div class="diag-card">
+                    <strong>Implantação</strong>
+                    <span>Servidores e hardware</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- NORMALIZAÇÃO -->
+    <div class="bloco">
+
+        <div class="tag-aula">
+            AULAS 9, 10 e 11
+        </div>
+
+        <h3>🧩 Normalização & Dependência Funcional</h3>
+
+        <div class="flashcard destaque">
+
+            <strong>Objetivos da Normalização</strong>
+
+            <ul>
+                <li>Reduzir redundância</li>
+                <li>Evitar anomalias</li>
+                <li>Melhorar integridade</li>
+                <li>Economizar espaço</li>
+            </ul>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>Classificação dos Atributos</h4>
+
+            <div class="grid-atributos">
+
+                <div class="atributo-card">
+                    <h5>Atômico</h5>
+                    <p>Indivisível</p>
+                    <span>Ex: CPF</span>
+                </div>
+
+                <div class="atributo-card">
+                    <h5>Composto</h5>
+                    <p>Divisível</p>
+                    <span>Ex: Endereço</span>
+                </div>
+
+                <div class="atributo-card">
+                    <h5>Monovalorado</h5>
+                    <p>Um valor</p>
+                    <span>Ex: Matrícula</span>
+                </div>
+
+                <div class="atributo-card">
+                    <h5>Multivalorado</h5>
+                    <p>Vários valores</p>
+                    <span>Ex: Telefone</span>
+                </div>
+
+                <div class="atributo-card">
+                    <h5>Derivado</h5>
+                    <p>Calculado</p>
+                    <span>Ex: Idade</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>Dependência Funcional</h4>
+
+            <div class="codigo">
+                X → Y
+            </div>
+
+            <p>
+                X determina o valor de Y.
+            </p>
+
+            <div class="grid-cards">
+
+                <div class="mini-card">
+                    <h5>Total</h5>
+                    <p>Depende da PK inteira.</p>
+                </div>
+
+                <div class="mini-card">
+                    <h5>Parcial</h5>
+                    <p>Depende de parte da PK.</p>
+                </div>
+
+                <div class="mini-card">
+                    <h5>Transitiva</h5>
+                    <p>Depende de outro campo não-chave.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="topico">
+
+            <h4>Formas Normais</h4>
+
+            <div class="normal-card">
+                <h5>1FN</h5>
+
+                <ul>
+                    <li>Campos atômicos</li>
+                    <li>Sem listas internas</li>
+                    <li>Sem grupos repetidos</li>
+                </ul>
+
+                <div class="topico-importante">
+                    Telefones vão para outra tabela.
+                </div>
+            </div>
+
+            <div class="normal-card">
+                <h5>2FN</h5>
+
+                <ul>
+                    <li>Estar na 1FN</li>
+                    <li>Sem dependência parcial</li>
+                </ul>
+
+            </div>
+
+            <div class="normal-card">
+                <h5>3FN</h5>
+
+                <ul>
+                    <li>Estar na 2FN</li>
+                    <li>Sem dependência transitiva</li>
+                    <li>Sem atributos derivados</li>
+                </ul>
+
+            </div>
+
+            <div class="normal-card">
+                <h5>4FN</h5>
+
+                <ul>
+                    <li>Sem dependências multivaloradas</li>
+                    <li>Evita redundância combinatória</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RESUMÃO -->
+    <div class="bloco resumo-rapido">
+
+        <h3>⚡ Resumo Rápido</h3>
+
+        <div class="tabela-resumo">
+
+            <div class="linha">
+                <div class="coluna titulo">1FN</div>
+                <div class="coluna">Atomicidade</div>
+            </div>
+
+            <div class="linha">
+                <div class="coluna titulo">2FN</div>
+                <div class="coluna">Dependência parcial</div>
+            </div>
+
+            <div class="linha">
+                <div class="coluna titulo">3FN</div>
+                <div class="coluna">Dependência transitiva</div>
+            </div>
+
+            <div class="linha">
+                <div class="coluna titulo">4FN</div>
+                <div class="coluna">Dependência multivalorada</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        Janderson Duarte • GitHub: <a href="github.com/jandersonhp">jandersonhp</a>
+    </footer>
+
+</section>
+<!-- SIMULADO 1 -->
+<section id="simulado1" class="pagina">
+
+    <button class="voltar" onclick="abrirPagina('home')">
+        ⬅ Voltar ao Início
+    </button>
+
+    <h2>📝 Simulado 1</h2>
+
+    <div class="score-box">
+        Pontuação:
+        <span id="score1">0</span> / 2500
+    </div>
+
+    <div id="quiz1"></div>
+
+</section>
+
+<!-- SIMULADO 2 -->
+<section id="simulado2" class="pagina">
+
+    <button class="voltar" onclick="abrirPagina('home')">
+        ⬅ Voltar ao Início
+    </button>
+
+    <h2>🧠 Simulado 2</h2>
+
+    <div class="score-box">
+        Pontuação:
+        <span id="score2">0</span> / 2500
+    </div>
+
+    <div id="quiz2"></div>
+
+</section>
+
+<!-- SIMULADO 3 -->
+<section id="simulado3" class="pagina">
+
+    <button class="voltar" onclick="abrirPagina('home')">
+        ⬅ Voltar ao Início
+    </button>
+
+    <h2>🎯 Simulado 3</h2>
+
+    <div class="score-box">
+        Pontuação:
+        <span id="score3">0</span> / 2500
+    </div>
+
+    <div id="quiz3"></div>
+
+</section>
+<script src="script.js"></script>
+
+</body>
+</html>
