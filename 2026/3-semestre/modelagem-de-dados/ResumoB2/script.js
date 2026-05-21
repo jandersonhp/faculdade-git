@@ -12,7 +12,12 @@ function criarQuiz(containerId, scoreId, questoes){
     const container = document.getElementById(containerId);
 
     let score = 0;
-    const valorQuestao = 156.25;
+    let acertos = 0;
+    let erros = 0;
+
+    const valorQuestao = 250;
+
+    const numeroQuiz = scoreId.replace("score","");
 
     questoes.forEach((q, index)=>{
 
@@ -35,11 +40,13 @@ function criarQuiz(containerId, scoreId, questoes){
                 const botoes = div.querySelectorAll("button");
 
                 botoes.forEach(b=>{
+
                     b.disabled = true;
 
                     if(b.innerText === q.resposta){
                         b.classList.add("correta");
                     }
+
                 });
 
                 if(op === q.resposta){
@@ -47,14 +54,25 @@ function criarQuiz(containerId, scoreId, questoes){
                     btn.classList.add("correta");
 
                     score += valorQuestao;
+                    acertos++;
 
                 }else{
 
                     btn.classList.add("errada");
+
+                    erros++;
                 }
 
                 document.getElementById(scoreId).innerText =
                     Math.round(score);
+
+                document.getElementById(
+                    `acertos${numeroQuiz}`
+                ).innerText = acertos;
+
+                document.getElementById(
+                    `erros${numeroQuiz}`
+                ).innerText = erros;
 
                 const fb = document.createElement("div");
 
@@ -69,6 +87,7 @@ function criarQuiz(containerId, scoreId, questoes){
                 `;
 
                 div.appendChild(fb);
+
             }
 
             div.appendChild(btn);
